@@ -100,20 +100,19 @@ mul(a: 10, b: 20)
 
 //Return Reverse of given Integer(N)
 
-func reverse( n: Int) -> Int
+func reverse(n: Int) -> Int
 {
     var rev = 0
     var num = n
-    while n != 0
-    {
-       rev = (rev * 10 ) + (num % 10)
-       num = Int( num/10)
-    }
-    return(rev)
     
+    while num != 0 {
+        rev = (rev * 10) + (num % 10)
+        num = Int(num / 10)
+    }
+    return rev
 }
 
-print(reverse(n: 342))
+print(reverse(n: 23453))
 
 
 
@@ -129,6 +128,48 @@ func display(n: Int) -> Int
 
 display(n: 5)
 
+
+
+func sumN(n : Int) -> Int
+{
+    if n == 0 {
+        return 0
+    }else{
+        return n + sumN(n: n - 1)
+    }
+}
+
+let s0 = sumN(n: 5)
+
+print("SUM Rec : \(s0)")
+
+
+
+func optimizedBinaryToDecimal(n: Int) -> Int
+{
+    var dec = 0
+    var num = n
+    var cnt = 1
+    
+    while num != 0 {
+        if(num % 10 == 1)
+        {
+            dec = dec + cnt
+        }
+        num = Int(num / 10)
+        cnt *= 2
+    }
+    return dec
+}
+
+print("O - DECIMAL : \(optimizedBinaryToDecimal(n: 111))")
+print("O - DECIMAL : \(optimizedBinaryToDecimal(n: 110))")
+print("O - DECIMAL : \(optimizedBinaryToDecimal(n: 1111))")
+print("O - DECIMAL : \(optimizedBinaryToDecimal(n: 11111111))")
+print("O - DECIMAL : \(optimizedBinaryToDecimal(n: 001))")
+
+
+        
 
 
 
