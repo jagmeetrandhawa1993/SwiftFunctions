@@ -89,9 +89,45 @@ func si(amount: Float, rate: Float, noOfYear: Float=2) -> Float
 print(si(amount: 1000, rate: 2.5, noOfYear: 10)) //here noOfYear will be 10
 print(si(amount: 1000, rate: 2.5)) //here noOfYear is 2 as described in function
 
+func mul(a: Int, b: Int)
+{
+    var c = a*b
+    print("Mul=\(c)")
+
+}
+
+mul(a: 10, b: 20)
+
+//Return Reverse of given Integer(N)
+
+func reverse( n: Int) -> Int
+{
+    var rev = 0
+    var num = n
+    while n != 0
+    {
+       rev = (rev * 10 ) + (num % 10)
+       num = Int( num/10)
+    }
+    return(rev)
+    
+}
+
+print(reverse(n: 342))
 
 
 
+func display(n: Int) -> Int
+{
+    if n==0{
+    return 0
+    }
+    print(n)
+    return display(n: n-1)
+
+}
+
+display(n: 5)
 
 
 
